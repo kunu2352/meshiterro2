@@ -1,4 +1,4 @@
-class PostimagesController < ApplicationController
+class PostImagesController < ApplicationController
   def new
     @post_image = PostImage.new
   end
@@ -16,7 +16,9 @@ class PostimagesController < ApplicationController
 
   def show
     @post_image = PostImage.find(params[:id])
+    @post_comment = PostComment.new
   end
+  
   def destroy
     post_image = PostImage.find(params[:id])
     post_image.destroy
